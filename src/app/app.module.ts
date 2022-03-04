@@ -8,6 +8,8 @@ import { AboutmeComponent } from './aboutme/aboutme.component';
 import { ContactComponent } from './contact/contact.component';
 import { MainlayoutComponent } from './layout/mainlayout/mainlayout.component';
 import { AdminlayoutComponent } from './layout/adminlayout/adminlayout.component';
+import { MainnavComponent } from './nav/mainnav/mainnav.component';
+import { AdminnavComponent } from './nav/adminnav/adminnav.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AdminlayoutComponent } from './layout/adminlayout/adminlayout.component
     AboutmeComponent,
     ContactComponent,
     MainlayoutComponent,
-    AdminlayoutComponent
+    AdminlayoutComponent,
+    MainnavComponent,
+    AdminnavComponent
   ],
   imports: [
     BrowserModule,
