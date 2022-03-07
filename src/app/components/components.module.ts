@@ -2,16 +2,17 @@ import { NgModule } from '@angular/core';
 import {Router, RouterModule} from "@angular/router";
 import { CommonModule } from '@angular/common';
 import { MenucategoryComponent } from './menucategory/menucategory.component';
+import { PagetitleComponent } from './pagetitle/pagetitle.component';
 
 
 @NgModule({
-  declarations: [MenucategoryComponent],
+  declarations: [MenucategoryComponent, PagetitleComponent],
   imports: [
     CommonModule,
     RouterModule
   ],
   exports:[
-    MenucategoryComponent
+    MenucategoryComponent,PagetitleComponent
   ]
 })
 export class ComponentsModule { }
