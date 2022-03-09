@@ -7,32 +7,36 @@ import { AboutmeComponent } from './pages/aboutme/aboutme.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
 const routes: Routes = [
-{
-  path:"",
-  component:MainlayoutComponent,
-  children:[
-    {
-      path:"",
-      component:HomeComponent,
-    },
-    {
-      path:"aboutme",
-      component:AboutmeComponent
-    },
-    {
-      path:"contact",
-      component:ContactComponent
-    }
-  ]
-},
-{
-  path:"admin",
-  component:AdminlayoutComponent
-}
+  {
+    path: '',
+    component: MainlayoutComponent,
+    children: [
+      {
+        path: '',
+        component: HomeComponent,
+      },
+      {
+        path: 'page/:page',
+        component: HomeComponent,
+      },
+      {
+        path: 'aboutme',
+        component: AboutmeComponent,
+      },
+      {
+        path: 'contact',
+        component: ContactComponent,
+      },
+    ],
+  },
+  {
+    path: 'admin',
+    component: AdminlayoutComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

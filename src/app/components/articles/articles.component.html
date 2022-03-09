@@ -1,0 +1,79 @@
+<div *ngIf="articleService.loading">
+  <main *ngFor="let item of [1,2,3,4,5]" class="page mb-2">
+    <!-- Content -->
+    <div class="page-content">
+
+        <!-- Placeholder Content -->
+        <div class="placeholder-content">
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+        </div>
+
+    </div>
+  </main>
+</div>
+
+<div *ngIf="articles.length>0 else emptyTemplate">
+  <div *ngFor="let item of articles | paginate:{itemsPerPage:pageSize,currentPage:page,totalItems:totalCount}">
+    <ng-container
+    *ngTemplateOutlet="horizontalTemplate;
+    context:{id:item.id,
+      commentCount:item.commentCount,
+      viewCount:item.viewCount,
+      categoryName:item.category.name,
+      createdDate:item.createdDate,
+      mainContent:item.mainContent,
+      title:item.title,
+     imageUrl:item.imageUrl}"></ng-container>
+  </div>
+</div>
+<ng-template #emptyTemplate>
+  <div *ngIf="!articleService.loading" class="alert alert-danger" role="alert">
+    No article found..
+  </div>
+</ng-template>
+
+<ng-template let-id="id" let-commentCount="commentCount" let-viewCount="viewCount" let-categoryName="categoryName"
+  let-createdDate="createdDate" let-mainContent="mainContent" let-title="title" let-imageUrl="imageUrl"
+  #horizontalTemplate>
+  <div class="card bg-light border-primary mb-2">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4">
+          <img class="card-img" [src]="imageUrl || default_article" alt="">
+        </div>
+        <div class="col-md-8">
+          <h5 class="card-title">{{title}}</h5>
+          <p class="card-text">{{mainContent}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer bg-transparent border-primary">
+      <span style="background-color: black; margin-left: 10px;" class="badge badge-pill badge-dark">
+        <i class="fa fa-calendar"></i> {{createdDate | date:'dd.MM.yyyy'}}
+      </span>
+      <span style="background-color: darkgreen; margin-left: 10px;" class="badge badge-pill badge-success">
+        <i class="fa fa-folder"></i> {{categoryName}}
+      </span>
+      <span style="background-color: darkgreen; margin-left: 10px;" class="badge badge-pill badge-success">
+        <i class="fa fa-eye"></i> {{viewCount}}
+      </span>
+      <span style="background-color: darkblue ; margin-left: 10px;" class="badge badge-pill badge-primary">
+        <i class="fa fa-comment"></i> {{commentCount}}
+      </span>
+      <a routerLink="['/article',id]" class="btn btn-primary btn-sm" style=" margin-left: 10px; float: right;">Read More...</a>
+    </div>
+  </div>
+</ng-template>
+<pagination-controls *ngIf="totalCount>pageSize" [responsive]="true" (pageChange)="pageChanged($event)" previousLabel="Previous" nextLabel="Next">
+
+</pagination-controls>

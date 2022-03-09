@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
-import {Router, RouterModule} from "@angular/router";
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 import { MenucategoryComponent } from './menucategory/menucategory.component';
 import { PagetitleComponent } from './pagetitle/pagetitle.component';
-
+import { ArticlesComponent } from './articles/articles.component';
 
 @NgModule({
-  declarations: [MenucategoryComponent, PagetitleComponent],
-  imports: [
-    CommonModule,
-    RouterModule
-  ],
-  exports:[
-    MenucategoryComponent,PagetitleComponent
-  ]
+  declarations: [MenucategoryComponent, PagetitleComponent, ArticlesComponent],
+  imports: [CommonModule, RouterModule, NgxPaginationModule],
+  exports: [MenucategoryComponent, PagetitleComponent, ArticlesComponent],
 })
-export class ComponentsModule { }
+export class ComponentsModule {}
