@@ -26,7 +26,8 @@ export class ArticlesComponent implements OnInit {
   ngOnInit() {
     this.articleService.loading=true;
   }
-  pageChanged(event) {this.articleService.loading=true;
+  pageChanged(event) {
+    this.articleService.loading=true;
     this.page = event;
     this.router.navigateByUrl(`/page/${this.page}`);
   }

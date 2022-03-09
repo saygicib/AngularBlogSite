@@ -32,6 +32,7 @@
       categoryName:item.category.name,
       createdDate:item.createdDate,
       mainContent:item.mainContent,
+      contentSummary:item.contentSummary,
       title:item.title,
      imageUrl:item.imageUrl}"></ng-container>
   </div>
@@ -43,7 +44,7 @@
 </ng-template>
 
 <ng-template let-id="id" let-commentCount="commentCount" let-viewCount="viewCount" let-categoryName="categoryName"
-  let-createdDate="createdDate" let-mainContent="mainContent" let-title="title" let-imageUrl="imageUrl"
+  let-createdDate="createdDate" let-contentSummary="contentSummary" let-title="title" let-imageUrl="imageUrl"
   #horizontalTemplate>
   <div class="card bg-light border-primary mb-2">
     <div class="card-body">
@@ -53,7 +54,7 @@
         </div>
         <div class="col-md-8">
           <h5 class="card-title">{{title}}</h5>
-          <p class="card-text">{{mainContent}}</p>
+          <p class="card-text">{{contentSummary}}</p>
         </div>
       </div>
     </div>
