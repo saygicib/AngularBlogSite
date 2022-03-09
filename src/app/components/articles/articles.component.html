@@ -70,7 +70,7 @@
       <span style="background-color: darkblue ; margin-left: 10px;" class="badge badge-pill badge-primary">
         <i class="fa fa-comment"></i> {{commentCount}}
       </span>
-      <a [routerLink]="['/article',id]" class="btn btn-primary btn-sm" style=" margin-left: 10px; float: right;">Read More...</a>
+      <a [routerLink]="['/article',title | urlformat, id]" class="btn btn-primary btn-sm" style=" margin-left: 10px; float: right;">Read More...</a>
     </div>
   </div>
 </ng-template>
