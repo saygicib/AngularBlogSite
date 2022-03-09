@@ -1,0 +1,49 @@
+<div class="card bg-light" style="height: 500px;" *ngIf="articleService.loading">
+  <div class="car-body text-center">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-border text-secondary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-border text-success" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-border text-danger" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-border text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-border text-info" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-border text-dark" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</div>
+<div class="card border-primary"*ngIf="!articleService.loading">
+  <div class="card-header">
+    <h3>{{article.title}}</h3>
+    <div>
+      <span style="background-color: black; margin-left: 10px;" class="badge badge-pill badge-dark">
+        <i class="fa fa-calendar"></i> {{article.createdDate | date:'dd.MM.yyyy'}}
+      </span>
+      <span style="background-color: darkgreen; margin-left: 10px;" class="badge badge-pill badge-success">
+        <i class="fa fa-folder"></i> {{article.category.name}}
+      </span>
+      <span style="background-color: darkgreen; margin-left: 10px;" class="badge badge-pill badge-success">
+        <i class="fa fa-eye"></i> {{article.viewCount}}
+      </span>
+      <span style="background-color: darkblue ; margin-left: 10px;" class="badge badge-pill badge-primary">
+        <i class="fa fa-comment"></i> {{article.commentCount}}
+      </span>
+    </div>
+  </div>
+  <div class="card-body">
+    <div [innerHTML]="article.mainContent">
+
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 <div *ngIf="articleService.loading">
-  <main *ngFor="let item of [1,2,3,4,5]" class="page mb-2">
+  <main *ngFor="let item of createRange(loadingItem)" class="page mb-2">
     <!-- Content -->
     <div class="page-content">
 
@@ -70,7 +70,7 @@
       <span style="background-color: darkblue ; margin-left: 10px;" class="badge badge-pill badge-primary">
         <i class="fa fa-comment"></i> {{commentCount}}
       </span>
-      <a routerLink="['/article',id]" class="btn btn-primary btn-sm" style=" margin-left: 10px; float: right;">Read More...</a>
+      <a [routerLink]="['/article',id]" class="btn btn-primary btn-sm" style=" margin-left: 10px; float: right;">Read More...</a>
     </div>
   </div>
 </ng-template>

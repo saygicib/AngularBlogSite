@@ -5,6 +5,7 @@ import { AdminlayoutComponent } from './layout/adminlayout/adminlayout.component
 import { HomeComponent } from './pages/home/home.component';
 import { AboutmeComponent } from './pages/aboutme/aboutme.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ArticleComponent } from './pages/article/article.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: 'aboutme',
         component: AboutmeComponent,
+      },
+      {
+        path: 'article/:id',
+        component: ArticleComponent,
       },
       {
         path: 'contact',

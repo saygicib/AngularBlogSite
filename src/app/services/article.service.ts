@@ -11,10 +11,20 @@ export class ArticleService {
 
   public loading: boolean = true;
   private apiUrl: string = 'http://localhost:44450/api/article';
-  getArticle(page: number, pageSize: number) {
+  getArticles(page: number, pageSize: number) {
     let api = `${this.apiUrl}/${page}/${pageSize}`;
-    return this.httpClient.get<any>(api).pipe(tap(x=>{
-      this.loading=false;
-    }))
+    return this.httpClient.get<any>(api).pipe(
+      tap((x) => {
+        this.loading = false;
+      })
+    );
+  }
+  getArticle(id: number) {
+    let api = `${this.apiUrl}/${id}`;
+    return this.httpClient.get<any>(api).pipe(
+      tap((x)=>{
+        this.loading=false;
+      })
+    );
   }
 }

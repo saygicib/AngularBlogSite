@@ -10,10 +10,11 @@ import { HomeComponent } from './home/home.component';
 import {ComponentsModule} from "../components/components.module";
 import { MainlayoutComponent } from '../layout/mainlayout/mainlayout.component';
 import { MainnavComponent } from '../nav/mainnav/mainnav.component';
+import { ArticleComponent } from './article/article.component';
 
 
 @NgModule({
-  declarations: [MainlayoutComponent,MainnavComponent,AboutmeComponent,ContactComponent,HomeComponent],
+  declarations: [MainlayoutComponent,MainnavComponent,AboutmeComponent,ContactComponent,HomeComponent, ArticleComponent],
   imports: [
     CommonModule,
     BrowserModule,

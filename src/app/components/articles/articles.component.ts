@@ -12,9 +12,17 @@ export class ArticlesComponent implements OnInit {
   @Input() articles: Article[];
   @Input() page: number;
   @Input() pageSize: number;
+  @Input() loadingItem:number;
   default_article:string="assets/articleEmpty.png";
   constructor(private router: Router, private route: ActivatedRoute,public articleService:ArticleService) {}
 
+  createRange(number){
+    var items:number[]=[];
+    for(var i=1;i<=number;i++){
+      items.push(i);
+    }
+    return items;
+  }
   ngOnInit() {
   }
   pageChanged(event) {

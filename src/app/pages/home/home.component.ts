@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
       this.articles = [];
       this.totalCount = 0;
       this.articleService
-        .getArticle(this.page, this.pageSize)
+        .getArticles(this.page, this.pageSize)
         .subscribe((data) => {
           this.articles = data.articleGetDtos;
           this.totalCount = data.totalCount;
