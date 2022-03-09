@@ -11,6 +11,7 @@ import { ComponentsModule } from '../components/components.module';
 import { MainlayoutComponent } from '../layout/mainlayout/mainlayout.component';
 import { MainnavComponent } from '../nav/mainnav/mainnav.component';
 import { ArticleComponent } from './article/article.component';
+import { ArticlesbycategoryComponent } from './articlesbycategory/articlesbycategory.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ArticleComponent } from './article/article.component';
     ContactComponent,
     HomeComponent,
     ArticleComponent,
+    ArticlesbycategoryComponent,
   ],
   imports: [
     CommonModule,

@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutmeComponent } from './pages/aboutme/aboutme.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ArticleComponent } from './pages/article/article.component';
+import { ArticlesbycategoryComponent } from './pages/articlesbycategory/articlesbycategory.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,14 @@ const routes: Routes = [
       {
         path: 'article/:title/:id',
         component: ArticleComponent,
+      },
+      {
+        path: 'category/:name/:id',
+        component: ArticlesbycategoryComponent,
+      },
+      {
+        path: 'category/:name/:id/page/:page',
+        component: ArticlesbycategoryComponent,
       },
       {
         path: 'contact',

@@ -27,4 +27,12 @@ export class ArticleService {
       })
     );
   }
+  getArticleByCategoryId(categoryId:number,page: number, pageSize: number){
+    let api = `${this.apiUrl}/GetArticlesByCategoryId/${categoryId}/${page}/${pageSize}`;
+    return this.httpClient.get<any>(api).pipe(
+      tap((x) => {
+        this.loading = false;
+      })
+    );
+  }
 }

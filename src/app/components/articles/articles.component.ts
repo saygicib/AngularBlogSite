@@ -12,23 +12,41 @@ export class ArticlesComponent implements OnInit {
   @Input() articles: Article[];
   @Input() page: number;
   @Input() pageSize: number;
-  @Input() loadingItem:number;
-  default_article:string="assets/articleEmpty.png";
-  constructor(private router: Router, private route: ActivatedRoute,public articleService:ArticleService) {}
+  @Input() loadingItem: number;
+  @Input() typeList: string;
+  default_article: string = 'assets/articleEmpty.png';
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    public articleService: ArticleService
+  ) {}
 
-  createRange(number){
-    var items:number[]=[];
-    for(var i=1;i<=number;i++){
+  createRange(number) {
+    var items: number[] = [];
+    for (var i = 1; i <= number; i++) {
       items.push(i);
     }
     return items;
   }
   ngOnInit() {
-    this.articleService.loading=true;
+    console.log(this.articles);
+    this.articleService.loading = true;
   }
   pageChanged(event) {
-    this.articleService.loading=true;
+    this.articleService.loading = true;
     this.page = event;
+    switch (this.typeList) {
+      case "home":
+        this.router.navigateByUrl(`/page/${this.page}`);
+        break;
+      case "category":
+        let categoryName = this.route.snapshot.paramMap.get("name");
+        let categoryId = this.route.snapshot.paramMap.get("id");
+        this.router.navigateByUrl(`/category/${categoryName}/${categoryId}/page/${this.page}`);
+        break;
+      default:
+        break;
+    }
     this.router.navigateByUrl(`/page/${this.page}`);
   }
 }
