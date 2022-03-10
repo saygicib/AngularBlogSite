@@ -31,7 +31,7 @@ export class ArticlesbycategoryComponent implements OnInit {
       }
       this.articleService.getArticleByCategoryId(this.categoryId,this.page,this.pageSize).subscribe(data=>{
         console.log(data);
-        this.articles=data.articles;
+        this.articles=data.articleGetDtos;
         this.totalCount=data.totalCount;
       })
     });
