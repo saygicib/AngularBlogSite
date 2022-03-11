@@ -19,7 +19,7 @@ export class ArticlesComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     public articleService: ArticleService
-  ) {}
+  ) { }
 
   createRange(number) {
     var items: number[] = [];
@@ -46,6 +46,5 @@ export class ArticlesComponent implements OnInit {
       default:
         break;
     }
-    this.router.navigateByUrl(`/page/${this.page}`);
   }
 }
