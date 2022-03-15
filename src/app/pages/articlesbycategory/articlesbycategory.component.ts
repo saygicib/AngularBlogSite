@@ -20,6 +20,9 @@ export class ArticlesbycategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(x=>{
+      if(this.ajax!=null){
+        this.ajax.unsubscribe();
+      }
       this.articleService.loading=true;
       this.articles=[];
       this.totalCount=0;
@@ -29,8 +32,7 @@ export class ArticlesbycategoryComponent implements OnInit {
       if(x.get("page")){
         this.page = Number(x.get("page"));
       }
-      this.articleService.getArticleByCategoryId(this.categoryId,this.page,this.pageSize).subscribe(data=>{
-        console.log(data);
+      this.ajax = this.articleService.getArticleByCategoryId(this.categoryId,this.page,this.pageSize).subscribe(data=>{
         this.articles=data.articleGetDtos;
         this.totalCount=data.totalCount;
       })
