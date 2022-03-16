@@ -7,6 +7,7 @@ import { AboutmeComponent } from './pages/aboutme/aboutme.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ArticleComponent } from './pages/article/article.component';
 import { ArticlesbycategoryComponent } from './pages/articlesbycategory/articlesbycategory.component';
+import { ArticlesbysearchComponent } from './pages/articlesbysearch/articlesbysearch.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
         component: ArticlesbycategoryComponent,
       },
       {
+        path: 'search/page/:page',
+        component: ArticlesbysearchComponent,
+      },
+      {
         path: 'contact',
         component: ContactComponent,
       },
@@ -47,6 +52,7 @@ const routes: Routes = [
     path: 'admin',
     component: AdminlayoutComponent,
   },
+
 ];
 
 @NgModule({

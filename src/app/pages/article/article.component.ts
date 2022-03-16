@@ -13,17 +13,21 @@ export class ArticleComponent implements OnInit {
 
   article:Article;
   category:Category;
-  constructor(public articleService : ArticleService,private router:Router,private route :ActivatedRoute) { }
+  ajax;
+  constructor(public articleService : ArticleService,private router:Router,private route :ActivatedRoute,) { }
 
   ngOnInit(): void {
+
     this.route.paramMap.subscribe(x=>{
+      if(this.ajax!=null){
+        this.ajax.unsubscribe();
+      }
       this.articleService.loading=true;
       let id =Number(this.route.snapshot.paramMap.get("id"));//(snapshot)anlık url'i alıyor. Onun üzerinden de id'yi alıyoruz.
-      this.articleService.getArticle(id).subscribe(data=>{
+      this.ajax = this.articleService.getArticle(id).subscribe(data=>{
         this.article=data;
         this.category=data.category;
       });
     });
   }
-
 }

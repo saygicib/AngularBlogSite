@@ -35,4 +35,16 @@ export class ArticleService {
       })
     );
   }
+  getArticleBySearchText(searchText:string,page:number,pageSize:number){
+    let api = `${this.apiUrl}/GetArticlesBySearchText/${searchText}/${page}/${pageSize}`;
+    return this.httpClient.get<any>(api).pipe(
+      tap((x)=>{
+        this.loading = false;
+      })
+    )
+  }
+  getArticlesByMostView(){
+    let api=`${this.apiUrl}/GetArticlesByMostView`;
+    return this.httpClient.get<any>(api);
+  }
 }

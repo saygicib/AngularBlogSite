@@ -12,6 +12,7 @@ import { MainlayoutComponent } from '../layout/mainlayout/mainlayout.component';
 import { MainnavComponent } from '../nav/mainnav/mainnav.component';
 import { ArticleComponent } from './article/article.component';
 import { ArticlesbycategoryComponent } from './articlesbycategory/articlesbycategory.component';
+import { ArticlesbysearchComponent } from './articlesbysearch/articlesbysearch.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ArticlesbycategoryComponent } from './articlesbycategory/articlesbycate
     HomeComponent,
     ArticleComponent,
     ArticlesbycategoryComponent,
+    ArticlesbysearchComponent,
   ],
   imports: [
     CommonModule,
