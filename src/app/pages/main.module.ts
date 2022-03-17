@@ -13,6 +13,7 @@ import { MainnavComponent } from '../nav/mainnav/mainnav.component';
 import { ArticleComponent } from './article/article.component';
 import { ArticlesbycategoryComponent } from './articlesbycategory/articlesbycategory.component';
 import { ArticlesbysearchComponent } from './articlesbysearch/articlesbysearch.component';
+import { ArchiveComponent } from './archive/archive.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ArticlesbysearchComponent } from './articlesbysearch/articlesbysearch.c
     ArticleComponent,
     ArticlesbycategoryComponent,
     ArticlesbysearchComponent,
+    ArchiveComponent,
   ],
   imports: [
     CommonModule,

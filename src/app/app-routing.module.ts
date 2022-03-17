@@ -8,6 +8,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ArticleComponent } from './pages/article/article.component';
 import { ArticlesbycategoryComponent } from './pages/articlesbycategory/articlesbycategory.component';
 import { ArticlesbysearchComponent } from './pages/articlesbysearch/articlesbysearch.component';
+import { ArchiveComponent } from './pages/archive/archive.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,14 @@ const routes: Routes = [
       {
         path: 'article/:title/:id',
         component: ArticleComponent,
+      },
+      {
+        path: 'archive/:year/:month',
+        component: ArchiveComponent,
+      },
+      {
+        path: 'archive/:year/:month/page/:page',
+        component: ArchiveComponent,
       },
       {
         path: 'category/:name/:id',
