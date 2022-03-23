@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '../app-routing.module';
+import { MaterialModule } from '../modules/material/material.module';
 
 import { AboutmeComponent } from './aboutme/aboutme.component';
 import { ContactComponent } from './contact/contact.component';
@@ -32,7 +33,8 @@ import { ArchiveComponent } from './archive/archive.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    MaterialModule
   ],
 })
 export class MainModule {}
